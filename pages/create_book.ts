@@ -28,7 +28,7 @@ router.post('/', validateBookDetailsMiddleware, async (req: Request, res: Respon
     res.status(200).send(savedBook);
   } catch (err: unknown) {
     console.error('Error creating book:', (err as Error).message);
-    res.status(500).send('Error creating book: ' + bookTitle);
+    res.status(400).send('Error creating book: ' + bookTitle);
   }
 });
 
